@@ -16,6 +16,9 @@ from bs4 import BeautifulSoup
 
 log_file = './app/logs/app.log'
 
+if not os.path.exists(log_file):
+    os.makedirs(os.path.dirname(log_file), exist_ok=True)
+
 # Create a logger
 logger = logging.getLogger('BackendLogs')
 logger.setLevel(logging.DEBUG)
